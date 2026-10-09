@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How AI Agents Work - Interactive 3D Explainer</title>
+  <link rel="stylesheet" href="style.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="scene"></div>
+
+  <header id="topbar">
+    <div class="brand"><span class="logo"></span>How AI Agents Work</div>
+    <nav>
+      <button data-action="scenario-chat">&#9654; Plain chatbot</button>
+      <button data-action="scenario-agent" class="primary">&#9654; Full agent run</button>
+      <button data-action="cheatsheet">Cheat sheet</button>
+      <button data-action="quiz">Quiz</button>
+      <button data-action="intro">Help</button>
+      <button data-action="reset">Reset view</button>
+    </nav>
+  </header>
+
+  <aside id="panel" class="hidden">
+    <button class="close" data-action="close-panel" aria-label="Close">&times;</button>
+    <div id="panel-content"></div>
+  </aside>
+
+  <div id="caption" class="hidden"></div>
+
+  <div id="hint">Drag to rotate &middot; Scroll to zoom &middot; Click any object to learn what it is</div>
+
+  <div id="modal" class="hidden">
+    <div class="modal-card">
+      <button class="close" data-action="close-modal" aria-label="Close">&times;</button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
